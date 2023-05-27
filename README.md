@@ -15,7 +15,7 @@ pip install spacy==2.3.0 (require 2.x version)
 pip install levenshtein  
 pip install nltk  
 
-In api.py, change the input of the filepath. 
+In api.py, change the filepath to the path of wavfle. 
 
 results = prediced_one_file(filepath,  whisper_model_s, whisper_model_w, roberta, model, aligner, device)
 
