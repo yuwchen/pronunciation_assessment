@@ -11,5 +11,6 @@ pip install transformers
 pip install num2words   
 pip install pyctcdecode  
 pip install https://github.com/kpu/kenlm/archive/master.zip  
+pip install spacy==2.3.0 (require 2.x version)
 pip install levenshtein  
 pip install nltk  
