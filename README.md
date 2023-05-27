@@ -19,3 +19,5 @@ In api.py, change the input of the filepath.
 
 results = prediced_one_file(filepath,  whisper_model_s, whisper_model_w, roberta, model, aligner, device)
 
+
+pretrained_model: https://drive.google.com/file/d/1m29M4dlvwWIwbvWDcV8yU_wkvi79bhAh/view?usp=sharing
