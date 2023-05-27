@@ -13,8 +13,8 @@ from tqdm import tqdm
 from fairseq.models.roberta import RobertaModel
 from dataclasses import dataclass
 from transformers import AutoConfig, AutoModelForCTC, AutoProcessor
-from model_alignedword3_v4 import *
-from model_uttr_v1 import PronunciationPredictor
+from utils import *
+from model import PronunciationPredictor
 import time
 
 gc.collect()
