@@ -36,10 +36,12 @@ def prediced_one_file(filepath, whisper_model_s, whisper_model_w, roberta, model
         wav = wav.to(device)
 
         try:
-            sen_asr_s = remove_pun_except_apostrophe(get_transcript(filepath, whisper_model_s)).lower()
+            sen_asr_s_ori = get_transcript(filepath, whisper_model_s)
+            sen_asr_s = remove_pun_except_apostrophe(sen_asr_s_ori).lower()
             sen_asr_s = remove_pun_except_apostrophe(sen_asr_s).lower()
             sen_asr_s = convert_sentence(sen_asr_s)
-            sen_asr_w = remove_pun_except_apostrophe(get_transcript(filepath, whisper_model_w)).lower()
+            sen_asr_w_ori = get_transcript(filepath, whisper_model_w)
+            sen_asr_w = remove_pun_except_apostrophe(sen_asr_w_ori).lower()
             sen_asr_w = convert_sentence(sen_asr_w)
             align_s = get_alignment(filepath, sen_asr_s+'.', aligner)
             align_w = get_alignment(filepath, sen_asr_w+'.', aligner)
@@ -81,6 +83,8 @@ def prediced_one_file(filepath, whisper_model_s, whisper_model_w, roberta, model
             results['start'] = start[0]
             results['end'] = end[0]
             results['tokens'] = gt_word_list
+            results['transcript_S'] = sen_asr_s_ori
+            results['transcript_W'] = sen_asr_w_ori
 
             torch.cuda.empty_cache()
 
