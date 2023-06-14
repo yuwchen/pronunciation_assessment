@@ -32,7 +32,11 @@ def prediced_one_file(filepath, whisper_model_s, whisper_model_w, roberta, model
             transform = torchaudio.transforms.Resample(sr, 16000)
             wav = transform(wav)
             sr = 16000
-        
+            
+        if wav.shape[0]!=1:
+            wav = torch.mean(wav,0)                                                                                          
+            wav = torch.reshape(wav, (1, -1))
+
         wav = wav.to(device)
 
         try:
