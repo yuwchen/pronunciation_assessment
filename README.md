@@ -21,3 +21,22 @@ results = prediced_one_file(filepath,  whisper_model_s, whisper_model_w, roberta
 
 
 pretrained_model: https://drive.google.com/file/d/1m29M4dlvwWIwbvWDcV8yU_wkvi79bhAh/view?usp=sharing
+
+
+Reproduce testing result:
+Download speechocean762 dataset: https://www.openslr.org/101
+
+```
+test_alignedmodel3_gt.py --datadir /path/to/speechocean/wav --datalist /path/to/speechocean762_test.txt --ckptdir /path/to/chkp/dir
+```
+Put the "scores.json" to ./data directory, or change the path in line 32 "f = open('./data/scores.json')" to where you put the scores.json
+
+the Results will be saved in ./Results/{ckptdir_name}_speechocean762_test_gtb.txt  
+(See speechocean762_test_gtb.txt  for example result.)
+
+
+Calculate evalutation score:
+```
+evaluation_word_alignedmodel.py
+```
+change the path on line 24, 27, and 157
