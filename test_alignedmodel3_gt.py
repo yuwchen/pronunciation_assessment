@@ -29,7 +29,7 @@ def main():
     parser.add_argument('--datalist', default='./data/speechocean762_test.txt', type=str, help='')
     parser.add_argument('--ckptdir', type=str, help='Path to pretrained checkpoint.')
 
-    f = open('./data/scores.json')
+    f = open('./data/scores.json') #path to speechocean scores.json
     gt_data = json.load(f)
 
     args = parser.parse_args()
