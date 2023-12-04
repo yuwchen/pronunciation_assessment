@@ -1,5 +1,7 @@
 # pronunciation_assessment
 
+Important Note: this is a temporary version. Please check https://github.com/yuwchen/MultiPA for the submitted version. 
+
 requirement
 
 conda create -n chatbot python=3.9  
